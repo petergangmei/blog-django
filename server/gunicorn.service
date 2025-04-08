@@ -3,7 +3,7 @@ Description=Gunicorn daemon for Django app
 After=network.target
 
 [Service]
-Environment="DJANGO_SETTINGS_MODULE=core.settings.prod"
+Environment="DJANGO_SETTINGS_MODULE=core.settings"
 User=ubuntu
 WorkingDirectory=/home/ubuntu/bg
 ExecStart=/home/ubuntu/bg/venv/bin/gunicorn -k gevent --workers 1 --timeout 30 --bind unix:/home/ubuntu/bg/app.sock core.wsgi:application
